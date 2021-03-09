@@ -24,6 +24,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - uses: olegtarasov/get-tag@v2.1
+        id: tagName
+
       # Runs a single command using the runners shell
       - name: Install NPM Dependencies
         run: npm install
@@ -47,6 +50,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: jyapp91/hello-world-stategy1:${{ github.ref }}
+          tags: jyapp91/hello-world-stategy1:${{ steps.tagName.outputs.tag}}
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
