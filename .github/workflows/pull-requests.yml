@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Develop Branch Workflow
+name: Pull Requests Workflow
 
 # Controls when the action will run.
 on:
