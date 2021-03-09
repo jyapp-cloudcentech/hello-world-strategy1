@@ -4,7 +4,7 @@ name: New Issues Create
 
 on:
     issues:
-        types: [created]
+        types: [opened]
 
 jobs:
     create_issue_branch_job:
